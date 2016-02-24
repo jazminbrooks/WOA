@@ -41,6 +41,31 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.jazminbrooks.woa.MainActivity"/>
         </activity>
+        <activity
+            android:name=".MyAccount"
+            android:label="@string/title_activity_my_account"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".ChatRooms"
+            android:label="@string/title_activity_chat_rooms"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".BuildAWorkout"
+            android:label="@string/title_activity_build_aworkout"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Locations"
+            android:label="@string/title_activity_locations"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".ExerciseDescriptions"
+            android:label="@string/title_activity_exercise_descriptions"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

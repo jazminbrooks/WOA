@@ -4,4 +4,9 @@
     <string name="title_activity_signup">Signup</string>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_home_screen">HomeScreen</string>
+    <string name="title_activity_my_account">MyAccount</string>
+    <string name="title_activity_chat_rooms">ChatRooms</string>
+    <string name="title_activity_build_aworkout">BuildAWorkout</string>
+    <string name="title_activity_locations">Locations</string>
+    <string name="title_activity_exercise_descriptions">ExerciseDescriptions</string>
 </resources>
