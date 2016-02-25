@@ -13,4 +13,14 @@
     tools:context="com.example.jazminbrooks.woa.MyAccount"
     tools:showIn="@layout/activity_my_account">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="The page will contain options to : set notifications, change username and password"
+        android:id="@+id/textView"
+        android:textColor="@color/textColorDark"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp" />
 </RelativeLayout>

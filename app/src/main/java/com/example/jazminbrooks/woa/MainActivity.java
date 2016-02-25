@@ -10,11 +10,14 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 
 // Max Testing Git Commit...
 
 public class MainActivity extends AppCompatActivity implements android.view.View.OnClickListener{
 
+    private Button button;
+    private EditText editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

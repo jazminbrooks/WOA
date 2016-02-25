@@ -13,4 +13,14 @@
     tools:context="com.example.jazminbrooks.woa.Locations"
     tools:showIn="@layout/activity_locations">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="134dp"
+        android:text="Implement google maps " />
 </RelativeLayout>

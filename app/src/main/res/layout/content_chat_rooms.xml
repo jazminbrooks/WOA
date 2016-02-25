@@ -13,4 +13,12 @@
     tools:context="com.example.jazminbrooks.woa.ChatRooms"
     tools:showIn="@layout/activity_chat_rooms">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chat Here!!"
+        android:id="@+id/textView4"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="117dp" />
 </RelativeLayout>
