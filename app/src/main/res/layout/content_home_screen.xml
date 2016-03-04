@@ -90,10 +90,11 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="You have 2,000 points!!!"
-        android:id="@+id/textView2"
+        android:id="@+id/GreetingText"
         android:textColor="@color/textColorDark"
         android:layout_below="@+id/MyAccountButton"
         android:textSize="30dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"/>
 
 </RelativeLayout>

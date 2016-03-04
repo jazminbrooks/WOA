@@ -12,6 +12,9 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.jazminbrooks.woa.Data.ExerciseContent;
+import com.firebase.client.Firebase;
+
 // Max Testing Git Commit...
 
 public class MainActivity extends AppCompatActivity implements android.view.View.OnClickListener{
@@ -22,6 +25,12 @@ public class MainActivity extends AppCompatActivity implements android.view.View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Firebase.setAndroidContext(this);
+        Firebase myFirebaseRef= new Firebase("https://vivid-inferno-8916.firebaseio.com/");
+
+        ExerciseContent.updateItems(myFirebaseRef);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
