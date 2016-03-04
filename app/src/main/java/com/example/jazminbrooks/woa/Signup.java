@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Signup extends AppCompatActivity implements android.view.View.OnClickListener{
@@ -39,6 +40,19 @@ public class Signup extends AppCompatActivity implements android.view.View.OnCli
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    public void onResume(){
+        super.onResume();
+        System.out.println("Resuming Signup");
+        EditText emailInput = (EditText)findViewById(R.id.emailInput);
+        EditText usernameInput = (EditText)findViewById(R.id.usernameInput);
+        EditText passwordInput = (EditText)findViewById(R.id.passwordInput);
+        EditText passwordConfirmInput = (EditText)findViewById(R.id.passwordConfirmInput);
+
+        emailInput.setText("");
+        usernameInput.setText("");
+        passwordInput.setText("");
+        passwordConfirmInput.setText("");
+    }
 
     private void CreateAccount(){
         String email = ETEmail.getText().toString();
