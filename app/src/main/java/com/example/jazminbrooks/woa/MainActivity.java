@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements android.view.View
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         Firebase.setAndroidContext(this);
         Firebase myFirebaseRef= new Firebase("https://vivid-inferno-8916.firebaseio.com/");
 
