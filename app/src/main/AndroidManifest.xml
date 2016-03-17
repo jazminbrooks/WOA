@@ -74,6 +74,11 @@ Google Maps Android API v2, but are recommended.
             android:label="@string/title_activity_exercise_descriptions"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps_activity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.

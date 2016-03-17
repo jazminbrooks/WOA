@@ -9,4 +9,5 @@
     <string name="title_activity_build_aworkout">BuildAWorkout</string>
     <string name="title_activity_locations">Locations</string>
     <string name="title_activity_exercise_descriptions">ExerciseDescriptions</string>
+    <string name="title_activity_maps_activity">MapsActivity</string>
 </resources>
