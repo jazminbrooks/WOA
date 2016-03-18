@@ -88,7 +88,7 @@ Google Maps Android API v2, but are recommended.
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyABcLo27gmqKqvhKxF-hgQcZuR3VhI26Js" />
+            android:value="AIzaSyATvyjtTmGHApKp9ysQxZ6PuWMvucfAIUw" />
     </application>
 
 </manifest>
