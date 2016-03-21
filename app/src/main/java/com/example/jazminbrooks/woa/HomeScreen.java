@@ -22,15 +22,6 @@ public class HomeScreen extends AppCompatActivity implements android.view.View.O
         setContentView(R.layout.activity_home_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Button launchChatRoom = (Button)(findViewById(R.id.ChatRoomButton));
@@ -52,6 +43,14 @@ public class HomeScreen extends AppCompatActivity implements android.view.View.O
         textGreeting.setText("Hello " + username + "! You have 2000 points!");
 
 
+    }
+
+    public void onResume(){
+        super.onResume();
+        textGreeting = (TextView)findViewById(R.id.GreetingText);
+        SharedPreferences prefs = getSharedPreferences("com.example.jazminbrooks.woa", MODE_PRIVATE);
+        String username  = prefs.getString("username", "user");
+        textGreeting.setText("Hello " + username + "! You have 2000 points!");
     }
 
     @Override

@@ -10,4 +10,7 @@
     <string name="title_activity_locations">Locations</string>
     <string name="title_activity_exercise_descriptions">ExerciseDescriptions</string>
     <string name="title_activity_maps_activity">MapsActivity</string>
+    <string name="title_activity_change_password">ChangePassword</string>
+    <string name="title_activity_change_email">ChangeEmail</string>
+    <string name="title_activity_change_username">ChangeUsername</string>
 </resources>
