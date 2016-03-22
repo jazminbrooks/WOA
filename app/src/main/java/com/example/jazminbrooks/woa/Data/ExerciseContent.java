@@ -30,6 +30,7 @@ public class ExerciseContent {
      */
     public static final Map<String, Exercise> ITEM_MAP = new HashMap<String, Exercise>();
 
+    public static boolean INIT;
 
     static {
         // Add some sample items.
@@ -37,11 +38,7 @@ public class ExerciseContent {
             //addItem(getExerciseItem(i));
         //}
 
-        Exercise test = new Exercise();
-        test.setName("Test Name");
-        test.setType("Test Type");
-        addItem(test);
-
+        INIT = false;
     }
 
     public static void updateItems(Firebase myFirebaseRef) {

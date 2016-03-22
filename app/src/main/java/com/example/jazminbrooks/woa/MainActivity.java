@@ -45,7 +45,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Firebase.setAndroidContext(this);
         Firebase myFirebaseRef = new Firebase("https://vivid-inferno-8916.firebaseio.com/");
 
-        ExerciseContent.updateItems(myFirebaseRef);
+        if (ExerciseContent.INIT == false) {
+            ExerciseContent.updateItems(myFirebaseRef);
+            ExerciseContent.INIT = true;
+        }
 
    //    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
    //     setSupportActionBar(toolbar);

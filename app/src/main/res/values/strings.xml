@@ -13,4 +13,5 @@
     <string name="title_activity_change_password">ChangePassword</string>
     <string name="title_activity_change_email">ChangeEmail</string>
     <string name="title_activity_change_username">ChangeUsername</string>
+    <string name="title_activity_exercise_details">ExerciseDetails</string>
 </resources>

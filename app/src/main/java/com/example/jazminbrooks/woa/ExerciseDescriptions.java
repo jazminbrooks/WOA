@@ -1,5 +1,6 @@
 package com.example.jazminbrooks.woa;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -12,9 +13,7 @@ public class ExerciseDescriptions extends AppCompatActivity implements ExerciseF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_descriptions);
 
-
-
-/*
+        /*
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.list, new ExerciseFragment())
@@ -39,6 +38,10 @@ public class ExerciseDescriptions extends AppCompatActivity implements ExerciseF
 
 
     public void onListFragmentInteraction(ExerciseContent.Exercise exercise) {
+        Intent intent = new Intent(this, ExerciseDetails.class);
+        //intent.putExtra(ExerciseDetails.NAME,exercise.getName());
+        ExerciseDetails.mExercise = exercise;
+        startActivity(intent);
 
     }
 
