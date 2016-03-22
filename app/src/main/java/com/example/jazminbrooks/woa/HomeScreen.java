@@ -40,7 +40,7 @@ public class HomeScreen extends AppCompatActivity implements android.view.View.O
         textGreeting = (TextView)findViewById(R.id.GreetingText);
         SharedPreferences prefs = getSharedPreferences("com.example.jazminbrooks.woa", MODE_PRIVATE);
         String username  = prefs.getString("username", "user");
-        textGreeting.setText("Hello " + username + "! You have 2000 points!");
+        textGreeting.setText("Hello " + username + "!");
 
 
     }
@@ -50,7 +50,7 @@ public class HomeScreen extends AppCompatActivity implements android.view.View.O
         textGreeting = (TextView)findViewById(R.id.GreetingText);
         SharedPreferences prefs = getSharedPreferences("com.example.jazminbrooks.woa", MODE_PRIVATE);
         String username  = prefs.getString("username", "user");
-        textGreeting.setText("Hello " + username + "! You have 2000 points!");
+        textGreeting.setText("Hello " + username + "!");
     }
 
     @Override

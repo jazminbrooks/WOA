@@ -22,10 +22,12 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -73,11 +75,24 @@ public class Locations extends FragmentActivity implements
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+/*
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
+
+        //Add a marker for JO South
+        LatLng joSouth = new LatLng(39.995123, -83.01199);
+        mMap.addMarker(new MarkerOptions().position(joSouth).title("Jesse Owens South"));
+        //Add a marker for JO North
+        LatLng joNorth = new LatLng(40.0060361, -83.0143555);
+        mMap.addMarker(new MarkerOptions().position(joNorth).title("Jess Owens North"));
+        //Add a marker for the RPAC (note: rpac's long/lat from address was not working correctly so I used Cunz hall instead)
+        LatLng rpac = new LatLng(39.9986648, -83.017036);
+        mMap.addMarker(new MarkerOptions().position(rpac).title("RPAC").snippet("Recreation and Physical Activity Center"));
+        //Add a marker for the ARC
+        LatLng arc = new LatLng(40.0026654, -83.0319223);
+        mMap.addMarker(new MarkerOptions().position(arc).title("ARC").snippet("Adventure Recreation Center"));
     }
 
     @Override
@@ -129,9 +144,12 @@ public class Locations extends FragmentActivity implements
         LatLng latLng = new LatLng(currentLatitude, currentLongitude);
         MarkerOptions options = new MarkerOptions()
                 .position(latLng)
-                .title("I am here!");
+                .title("I am here!")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
         mMap.addMarker(options);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        CameraUpdate yourLocation = CameraUpdateFactory.newLatLngZoom(latLng, 14);
+        mMap.animateCamera(yourLocation);
     }
 
     @Override
