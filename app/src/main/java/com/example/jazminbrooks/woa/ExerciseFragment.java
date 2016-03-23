@@ -26,6 +26,7 @@ public class ExerciseFragment extends Fragment {
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
+    private int mSpacingInPixels = 20;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -68,6 +69,7 @@ public class ExerciseFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
             recyclerView.setAdapter(new ExerciseRecyclerViewAdapter(ExerciseContent.ITEMS, mListener));
+            recyclerView.addItemDecoration(new SpacesItemDecoration(mSpacingInPixels));
         }
         return view;
     }

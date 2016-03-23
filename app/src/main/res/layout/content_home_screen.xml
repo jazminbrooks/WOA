@@ -52,9 +52,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Build a workout"
+        android:text="My Workouts"
         android:background="@color/buttonColor"
-        android:id="@+id/BuildAWorkoutButton"
+        android:id="@+id/MyWorkoutsButton"
         android:padding="10dp"
         android:layout_margin="10dp"
         android:textColor="@color/textColor"

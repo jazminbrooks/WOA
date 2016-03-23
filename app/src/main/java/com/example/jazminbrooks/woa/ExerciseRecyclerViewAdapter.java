@@ -1,5 +1,6 @@
 package com.example.jazminbrooks.woa;
 
+import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -74,4 +75,6 @@ public class ExerciseRecyclerViewAdapter extends RecyclerView.Adapter<ExerciseRe
             return super.toString() + " '" + mContentView.getText() + "'";
         }
     }
+
 }
+

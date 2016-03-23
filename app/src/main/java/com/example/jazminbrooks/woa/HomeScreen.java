@@ -30,8 +30,8 @@ public class HomeScreen extends AppCompatActivity implements android.view.View.O
         launchExerciseDescriptions.setOnClickListener(this);
         Button launchLocationButton = (Button)(findViewById(R.id.LocationsButton));
         launchLocationButton.setOnClickListener(this);
-        Button launchBuildAWorkoutButton = (Button)(findViewById(R.id.BuildAWorkoutButton));
-        launchBuildAWorkoutButton.setOnClickListener(this);
+        Button launchMyWorkoutsButton = (Button)(findViewById(R.id.MyWorkoutsButton));
+        launchMyWorkoutsButton.setOnClickListener(this);
         Button launchMyAccount = (Button)(findViewById(R.id.MyAccountButton));
         launchMyAccount.setOnClickListener(this);
         Button logout = (Button)(findViewById(R.id.LogoutButton));
@@ -65,8 +65,8 @@ public class HomeScreen extends AppCompatActivity implements android.view.View.O
             case R.id.ChatRoomButton:
                 startActivity(new Intent(this, ChatRooms.class));
                 break;
-            case R.id.BuildAWorkoutButton:
-                startActivity(new Intent(this, BuildAWorkout.class));
+            case R.id.MyWorkoutsButton:
+                startActivity(new Intent(this, MyWorkouts.class));
                 break;
             case R.id.LocationsButton:
                 startActivity(new Intent(this, Locations.class));

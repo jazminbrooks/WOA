@@ -117,6 +117,10 @@ Google Maps Android API v2, but are recommended.
         <activity
             android:name=".ExerciseDetails"
             android:label="@string/title_activity_exercise_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MyWorkouts"
+            android:label="@string/title_activity_my_workouts"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
