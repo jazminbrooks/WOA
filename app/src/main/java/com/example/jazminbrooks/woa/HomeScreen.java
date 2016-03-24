@@ -63,7 +63,7 @@ public class HomeScreen extends AppCompatActivity implements android.view.View.O
                 startActivity(new Intent(this, MyAccount.class));
                 break;
             case R.id.ChatRoomButton:
-                startActivity(new Intent(this, ChatRooms.class));
+                startActivity(new Intent(this, ChatRoomSelect.class));
                 break;
             case R.id.MyWorkoutsButton:
                 startActivity(new Intent(this, MyWorkouts.class));

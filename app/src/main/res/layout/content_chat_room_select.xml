@@ -10,56 +10,50 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.jazminbrooks.woa.ChatRooms"
-    tools:showIn="@layout/activity_chat_rooms">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Chatting!"
-        android:id="@+id/usernameGreeting"
-        android:layout_below="@+id/chatRoomName"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+    tools:context="com.example.jazminbrooks.woa.ChatRoomSelect"
+    tools:showIn="@layout/activity_chat_room_select">
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/MessageInput"
-        android:layout_marginBottom="50dp"
-        android:editable="true"
+        android:id="@+id/ChatRoomInput"
+        android:hint="Enter Chat Room Name"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/SendButton"
-        android:layout_toStartOf="@+id/SendButton"/>
+        android:layout_marginBottom="42dp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send!"
-        android:id="@+id/SendButton"
-        android:layout_alignTop="@+id/MessageInput"
+        android:text="Start Chatting!"
+        android:id="@+id/StartButton"
+        android:layout_alignBottom="@+id/ChatRoomInput"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/ChatRoomInput"
+        android:layout_toEndOf="@+id/ChatRoomInput"/>
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@android:id/list"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_above="@+id/MessageInput"
-        android:layout_below="@+id/usernameGreeting"/>
+        android:id="@+id/ListOfRooms"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/StartButton"
+        android:layout_alignEnd="@+id/StartButton"
+        android:layout_above="@+id/textView"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Chat Room!"
-        android:id="@+id/chatRoomName"
-        android:layout_alignParentTop="true"
+        android:text="Enter name from list above, or enter a new name to create a new chatroom"
+        android:id="@+id/textView"
+        android:layout_above="@+id/StartButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/StartButton"
+        android:layout_alignEnd="@+id/StartButton"
+        android:textAlignment="center"/>
+
 </RelativeLayout>

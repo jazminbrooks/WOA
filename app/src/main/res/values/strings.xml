@@ -15,4 +15,5 @@
     <string name="title_activity_change_username">ChangeUsername</string>
     <string name="title_activity_exercise_details">ExerciseDetails</string>
     <string name="title_activity_my_workouts">MyWorkouts</string>
+    <string name="title_activity_chat_room_select">ChatRoomSelect</string>
 </resources>

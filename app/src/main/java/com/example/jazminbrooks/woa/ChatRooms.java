@@ -25,9 +25,11 @@ import com.firebase.client.ValueEventListener;
 public class ChatRooms extends ListActivity implements android.view.View.OnClickListener{
 
     private TextView ETUsername;
+    private TextView mChatRoomID;
     private EditText ETMessageInput;
     private Button BSendButton;
     private String mUsername;
+    private String mChatRoomName;
     private Firebase mFirebase;
     private ChatListAdapter mChatListAdapter;
     private ValueEventListener mConnectedListener;
@@ -36,8 +38,6 @@ public class ChatRooms extends ListActivity implements android.view.View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_rooms);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
         BSendButton = (Button)findViewById(R.id.SendButton);
         BSendButton.setOnClickListener(this);
@@ -45,11 +45,14 @@ public class ChatRooms extends ListActivity implements android.view.View.OnClick
 
 
         ETUsername = (TextView)findViewById(R.id.usernameGreeting);
+        mChatRoomID = (TextView)findViewById(R.id.chatRoomName);
         SharedPreferences prefs = getSharedPreferences("com.example.jazminbrooks.woa", MODE_PRIVATE);
         mUsername  = prefs.getString("username", "user");
+        mChatRoomName = prefs.getString("chatroom", "Room3");
         ETUsername.setText("Visible ID: " + mUsername);
+        mChatRoomID.setText("Chat Room: " + mChatRoomName);
 
-        mFirebase = new Firebase("https://vivid-inferno-8916.firebaseio.com/").child("Chatrooms").child("Room1");
+        mFirebase = new Firebase("https://vivid-inferno-8916.firebaseio.com/").child("Chatrooms").child(mChatRoomName);
 
 
 
