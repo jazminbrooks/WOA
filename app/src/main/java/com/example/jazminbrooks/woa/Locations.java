@@ -83,16 +83,16 @@ public class Locations extends FragmentActivity implements
 
         //Add a marker for JO South
         LatLng joSouth = new LatLng(39.995123, -83.01199);
-        mMap.addMarker(new MarkerOptions().position(joSouth).title("Jesse Owens South"));
+        mMap.addMarker(new MarkerOptions().position(joSouth).title("Jesse Owens South Recreation Center (JOS)").snippet("175 W. 11th Ave., Columbus, OH 43210"));
         //Add a marker for JO North
         LatLng joNorth = new LatLng(40.0060361, -83.0143555);
-        mMap.addMarker(new MarkerOptions().position(joNorth).title("Jess Owens North"));
+        mMap.addMarker(new MarkerOptions().position(joNorth).title("Jesse Owens North Recreation Center (JON)").snippet("2151 Neil Ave., Columbus, OH 43210"));
         //Add a marker for the RPAC (note: rpac's long/lat from address was not working correctly so I used Cunz hall instead)
-        LatLng rpac = new LatLng(39.9986648, -83.017036);
-        mMap.addMarker(new MarkerOptions().position(rpac).title("RPAC").snippet("Recreation and Physical Activity Center"));
+        LatLng rpac = new LatLng(39.999425, -83.018306);
+        mMap.addMarker(new MarkerOptions().position(rpac).title("Recreation and Physical Activity Center (RPAC) ").snippet("337 W. 17th Ave., Columbus, OH 43210"));
         //Add a marker for the ARC
         LatLng arc = new LatLng(40.0026654, -83.0319223);
-        mMap.addMarker(new MarkerOptions().position(arc).title("ARC").snippet("Adventure Recreation Center"));
+        mMap.addMarker(new MarkerOptions().position(arc).title("Adventure Recreation Center (ARC)").snippet("855 Woody Hayes Drive, Columbus, OH 43210"));
     }
 
     @Override
