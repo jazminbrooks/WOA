@@ -1,28 +1,25 @@
 package com.example.jazminbrooks.woa;
 
-import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.jazminbrooks.woa.ExerciseFragment.OnListFragmentInteractionListener;
-import com.example.jazminbrooks.woa.Data.ExerciseContent.Exercise;
+import com.example.jazminbrooks.woa.Data.WorkoutContent;
 
 import java.util.List;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link Exercise} and makes a call to the
- * specified {@link ExerciseFragment.OnListFragmentInteractionListener}.
+
  * TODO: Replace the implementation with code for your data type.
  */
-public class ExerciseRecyclerViewAdapter extends RecyclerView.Adapter<ExerciseRecyclerViewAdapter.ViewHolder> {
+public class WorkoutRecyclerViewAdapter extends RecyclerView.Adapter<WorkoutRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Exercise> mValues;
-    private final ExerciseFragment.OnListFragmentInteractionListener mListener;
+    private final List<WorkoutContent.Workout> mValues;
+    private final WorkoutFragment.OnListFragmentInteractionListener mListener;
 
-    public ExerciseRecyclerViewAdapter(List<Exercise> items, OnListFragmentInteractionListener listener) {
+    public WorkoutRecyclerViewAdapter(List<WorkoutContent.Workout> items, WorkoutFragment.OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -30,15 +27,15 @@ public class ExerciseRecyclerViewAdapter extends RecyclerView.Adapter<ExerciseRe
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_exercise, parent, false);
+                .inflate(R.layout.fragment_workout, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mNameView.setText(mValues.get(position).getName());
-        holder.mContentView.setText(mValues.get(position).getType());
+        holder.mNameView.setText(Integer.toString(position));
+        holder.mContentView.setText(mValues.get(position).getName());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,13 +58,13 @@ public class ExerciseRecyclerViewAdapter extends RecyclerView.Adapter<ExerciseRe
         public final View mView;
         public final TextView mNameView;
         public final TextView mContentView;
-        public Exercise mItem;
+        public WorkoutContent.Workout mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mNameView = (TextView) view.findViewById(R.id.id);
-            mContentView = (TextView) view.findViewById(R.id.name);
+            mNameView = (TextView) view.findViewById(R.id.workout_id);
+            mContentView = (TextView) view.findViewById(R.id.workout_name);
         }
 
         @Override

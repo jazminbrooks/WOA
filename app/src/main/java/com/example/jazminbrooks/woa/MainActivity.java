@@ -42,13 +42,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d(TAG, "On Create .....");
 
 
+
         Firebase.setAndroidContext(this);
+
         Firebase myFirebaseRef = new Firebase("https://vivid-inferno-8916.firebaseio.com/");
 
         if (ExerciseContent.INIT == false) {
-            ExerciseContent.updateItems(myFirebaseRef);
+            ExerciseContent.myFirebaseRef = myFirebaseRef;
+            ExerciseContent.updateItems();
             ExerciseContent.INIT = true;
         }
+
 
    //    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
    //     setSupportActionBar(toolbar);

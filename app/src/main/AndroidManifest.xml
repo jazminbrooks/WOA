@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.example.jazminbrooks.woa"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.jazminbrooks.woa">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <!--
 The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
 Google Maps Android API v2, but are recommended.
     -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -21,9 +21,9 @@ Google Maps Android API v2, but are recommended.
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -33,12 +33,12 @@ Google Maps Android API v2, but are recommended.
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.jazminbrooks.woa.MainActivity"/>
+                android:value="com.example.jazminbrooks.woa.MainActivity" />
         </activity>
         <activity
             android:name=".Login"
             android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".HomeScreen"
             android:label="@string/title_activity_home_screen"
@@ -46,7 +46,7 @@ Google Maps Android API v2, but are recommended.
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.jazminbrooks.woa.MainActivity"/>
+                android:value="com.example.jazminbrooks.woa.MainActivity" />
         </activity>
         <activity
             android:name=".MyAccount"
@@ -54,38 +54,34 @@ Google Maps Android API v2, but are recommended.
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.jazminbrooks.woa.HomeScreen"/>
+                android:value="com.example.jazminbrooks.woa.HomeScreen" />
         </activity>
         <activity
             android:name=".ChatRooms"
             android:label="@string/title_activity_chat_rooms"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name=".BuildAWorkout"
-            android:label="@string/title_activity_build_aworkout"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Locations"
             android:label="@string/title_activity_locations"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ExerciseDescriptions"
             android:label="@string/title_activity_exercise_descriptions"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps_activity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
         -->
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>
+            android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyATvyjtTmGHApKp9ysQxZ6PuWMvucfAIUw"/>
+            android:value="AIzaSyATvyjtTmGHApKp9ysQxZ6PuWMvucfAIUw" />
 
         <activity
             android:name=".ChangePassword"
@@ -94,7 +90,7 @@ Google Maps Android API v2, but are recommended.
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.jazminbrooks.woa.MyAccount"/>
+                android:value="com.example.jazminbrooks.woa.MyAccount" />
         </activity>
         <activity
             android:name=".ChangeEmail"
@@ -103,7 +99,7 @@ Google Maps Android API v2, but are recommended.
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.jazminbrooks.woa.MyAccount"/>
+                android:value="com.example.jazminbrooks.woa.MyAccount" />
         </activity>
         <activity
             android:name=".ChangeUsername"
@@ -112,16 +108,16 @@ Google Maps Android API v2, but are recommended.
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.jazminbrooks.woa.MyAccount"/>
+                android:value="com.example.jazminbrooks.woa.MyAccount" />
         </activity>
         <activity
             android:name=".ExerciseDetails"
             android:label="@string/title_activity_exercise_details"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MyWorkouts"
             android:label="@string/title_activity_my_workouts"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ChatRoomSelect"
             android:label="@string/title_activity_chat_room_select"
@@ -129,8 +125,16 @@ Google Maps Android API v2, but are recommended.
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.jazminbrooks.woa.HomeScreen"/>
+                android:value="com.example.jazminbrooks.woa.HomeScreen" />
         </activity>
+        <activity
+            android:name=".WorkoutDetails"
+            android:label="@string/title_activity_workout_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BuildWorkout"
+            android:label="@string/title_activity_build_workout"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

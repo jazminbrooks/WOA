@@ -16,4 +16,6 @@
     <string name="title_activity_exercise_details">ExerciseDetails</string>
     <string name="title_activity_my_workouts">MyWorkouts</string>
     <string name="title_activity_chat_room_select">ChatRoomSelect</string>
+    <string name="title_activity_workout_details">WorkoutDetails</string>
+    <string name="title_activity_build_workout">BuildWorkout</string>
 </resources>

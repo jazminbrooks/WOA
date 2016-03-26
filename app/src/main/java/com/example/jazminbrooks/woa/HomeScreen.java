@@ -12,6 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.jazminbrooks.woa.Data.ExerciseContent;
+import com.example.jazminbrooks.woa.Data.WorkoutContent;
+import com.firebase.client.Firebase;
+
 public class HomeScreen extends AppCompatActivity implements android.view.View.OnClickListener{
 
     private TextView textGreeting;
@@ -41,6 +45,18 @@ public class HomeScreen extends AppCompatActivity implements android.view.View.O
         SharedPreferences prefs = getSharedPreferences("com.example.jazminbrooks.woa", MODE_PRIVATE);
         String username  = prefs.getString("username", "user");
         textGreeting.setText("Hello " + username + "!");
+
+        Firebase.setAndroidContext(this);
+        final Firebase myFirebaseRef = new Firebase("https://vivid-inferno-8916.firebaseio.com/");
+
+        while (ExerciseContent.INIT == false) {
+            System.out.println("Loading Exercise Content....");
+        }
+        if (WorkoutContent.INIT == false) {
+            WorkoutContent.myFirebaseRef = myFirebaseRef;
+            WorkoutContent.updateItems(username);
+            WorkoutContent.INIT = true;
+        }
 
 
     }

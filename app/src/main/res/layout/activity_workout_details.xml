@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:id="@+id/workout_list"
-    tools:context="com.example.jazminbrooks.woa.MyWorkouts">
+    tools:context="com.example.jazminbrooks.woa.WorkoutDetails">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -22,17 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_my_workouts" />
+    <include layout="@layout/content_workout_details" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_menu_add"
-        android:background="#d50000"
-        app:backgroundTint="#e53935"
-        android:foregroundTint="#ffffff" />
 
 </android.support.design.widget.CoordinatorLayout>

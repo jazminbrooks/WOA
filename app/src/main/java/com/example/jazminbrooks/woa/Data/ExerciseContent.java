@@ -32,6 +32,8 @@ public class ExerciseContent {
 
     public static boolean INIT;
 
+    public static Firebase myFirebaseRef;
+
     static {
         // Add some sample items.
         //for (int i = 1; i <= COUNT; i++) {
@@ -39,9 +41,11 @@ public class ExerciseContent {
         //}
 
         INIT = false;
+
     }
 
-    public static void updateItems(Firebase myFirebaseRef) {
+    public static void updateItems() {
+
 
         Query queryRef = myFirebaseRef.child("Exercise").orderByValue();
         queryRef.addValueEventListener(new ValueEventListener() {
@@ -55,7 +59,7 @@ public class ExerciseContent {
                     //    System.out.println(row.getKey() + " === " + row.getValue());
                     //}
 
-                    System.out.println(exercise.getName() + " -> " + exercise.getType());
+                    System.out.println("ExerciseContent Adding Exercise: " + exercise.getName() + " -> " + exercise.getType());
                     addItem(exercise);
                 }
             }
@@ -71,7 +75,7 @@ public class ExerciseContent {
 
     private static void addItem(Exercise item) {
         ITEMS.add(item);
-        ITEM_MAP.put(Integer.toString(ITEMS.size()), item);
+        ITEM_MAP.put(item.getName(), item);
     }
 
 

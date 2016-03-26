@@ -39,14 +39,6 @@ public class ExerciseDetails extends AppCompatActivity {
         TextView videoText = (TextView) findViewById(R.id.video_d);
         videoText.setText(mExercise.getVideo());
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Exercise Sharing Not Yet Implemented.", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
 }
