@@ -20,10 +20,13 @@ import java.util.Map;
  */
 public class WorkoutContent {
 
-    // List of all Workouts for the Current user
-    public static List<Workout> ITEMS = new ArrayList<>();
+    // List of all Workouts for all users
+    public static List<Workout> ALL_ITEMS = new ArrayList<>();
+    // List of all workouts for current user
+    public static List<Workout> USER_ITEMS = new ArrayList<>();
+
     // Map of Workout ID's to Workout Objects
-    public static Map<String, Workout> ITEMS_MAP = new HashMap();
+    public static Map<String, Workout> ALL_ITEMS_MAP = new HashMap();
     // Map of Workouts to List of Exercise Objects in the Workout
     public static Map<Workout, List<ExerciseContent.Exercise>> WORKOUT_EXERCISES = new HashMap<>();
 
@@ -54,18 +57,15 @@ public class WorkoutContent {
         USERID = "none";
     }
 
-    public static void updateItems(String userid) {
-
-        USERID = userid;
-
+    public static void updateItems() {
 
         Query queryRef = myFirebaseRef.child("Workouts").orderByValue();
 
         queryRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                ITEMS = new ArrayList<>();
-                ITEMS_MAP = new HashMap<>();
+                ALL_ITEMS = new ArrayList<>();
+                ALL_ITEMS_MAP = new HashMap<>();
 
                 System.out.println(snapshot.getChildrenCount() + " children in Data!!!!!!!!!!!!");
                 NUM_WORKOUTS = (int)snapshot.getChildrenCount();
@@ -74,11 +74,10 @@ public class WorkoutContent {
                     Workout workout = workoutSnapshot.getValue(Workout.class);
                     String workout_id = workoutSnapshot.getKey();
 
-                    if (workout.getUserid().equals(USERID)) {
-                        System.out.println("(" + workout.getUserid() + ", " + workout.getName() + ") -> " + workout_id);
-                        addItem(workout, workout_id);
-                    }
+                    System.out.println("(" + workout.getUserid() + ", " + workout.getName() + ") -> " + workout_id);
+                    addItem(workout, workout_id);
                 }
+                updateUserWorkouts();
             }
 
             @Override
@@ -97,7 +96,7 @@ public class WorkoutContent {
 
                 for (DataSnapshot workoutSnapshot : snapshot.getChildren()) {
                     String workout_key = workoutSnapshot.getKey();
-                    Workout workout = ITEMS_MAP.get(workout_key);
+                    Workout workout = ALL_ITEMS_MAP.get(workout_key);
 
                     List<ExerciseContent.Exercise> exercises = new ArrayList<>();
 
@@ -112,7 +111,6 @@ public class WorkoutContent {
                     }
 
                     addExercise(workout, exercises);
-
                 }
             }
 
@@ -126,14 +124,14 @@ public class WorkoutContent {
 
     private static void addItem(Workout item, String id) {
         boolean contains = false;
-        for(Workout e : ITEMS) {
+        for(Workout e : ALL_ITEMS) {
             if (e.getName().equals(item.getName())) {
                 contains = true;
             }
         }
         if(!contains) {
-            ITEMS.add(item);
-            ITEMS_MAP.put(id, item);
+            ALL_ITEMS.add(item);
+            ALL_ITEMS_MAP.put(id, item);
         }
     }
 
@@ -214,6 +212,16 @@ public class WorkoutContent {
         }
     }
 
+    public static void updateUserWorkouts() {
+        USER_ITEMS = new ArrayList<>();
+
+        for (int i = 0; i < ALL_ITEMS.size(); i++){
+            Workout workout = ALL_ITEMS.get(i);
+            if (workout.getUserid().equals(USERID)) {
+                USER_ITEMS.add(workout);
+            }
+        }
+    }
 
     /**
      */

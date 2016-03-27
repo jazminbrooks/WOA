@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.jazminbrooks.woa.Data.ExerciseContent;
 import com.example.jazminbrooks.woa.Data.WorkoutContent;
 
 /**
@@ -60,7 +59,7 @@ public class WorkoutFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new WorkoutRecyclerViewAdapter(WorkoutContent.ITEMS, mListener));
+            recyclerView.setAdapter(new WorkoutRecyclerViewAdapter(WorkoutContent.USER_ITEMS, mListener));
             recyclerView.addItemDecoration(new SpacesItemDecoration(mSpacingInPixels));
         }
         return view;

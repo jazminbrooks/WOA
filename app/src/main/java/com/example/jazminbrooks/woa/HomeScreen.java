@@ -46,19 +46,21 @@ public class HomeScreen extends AppCompatActivity implements android.view.View.O
         String username  = prefs.getString("username", "user");
         textGreeting.setText("Hello " + username + "!");
 
+
+        // Gather Firebase Workout Data
         Firebase.setAndroidContext(this);
         final Firebase myFirebaseRef = new Firebase("https://vivid-inferno-8916.firebaseio.com/");
 
         while (ExerciseContent.INIT == false) {
             System.out.println("Loading Exercise Content....");
         }
+        WorkoutContent.USERID = username;
         if (WorkoutContent.INIT == false) {
             WorkoutContent.myFirebaseRef = myFirebaseRef;
-            WorkoutContent.updateItems(username);
+            WorkoutContent.updateItems();
             WorkoutContent.INIT = true;
         }
-
-
+        WorkoutContent.updateUserWorkouts();
     }
 
     public void onResume(){
