@@ -83,34 +83,34 @@ public class ChatRoomSelect extends Activity implements android.view.View.OnClic
 
         listOfRooms = new ArrayList<String>();
 
-        Firebase firebase = new Firebase("https://vivid-inferno-8916.firebaseio.com/").child("Chatrooms");
-
-        firebase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                System.out.println("IN ON DATA CHANGE");
-                System.out.println(snapshot.getValue());
-                for (DataSnapshot entry : snapshot.getChildren()) {
-                    System.out.println(entry.getKey());
-                    listOfRooms.add(entry.getKey());
-                }
-                for (String i : listOfRooms) {
-                    System.out.println(i);
-                }
-
-                String[] toReturn = new String[listOfRooms.size()];
-                toReturn = listOfRooms.toArray(toReturn);
-                ArrayAdapter adapter = new ArrayAdapter<String>(ChatRoomSelect.this, R.layout.activity_listview, toReturn);
-                ListView listView = (ListView) findViewById(R.id.ListOfRooms);
-                listView.setAdapter(adapter);
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-                System.out.println("The read failed: " + firebaseError.getMessage());
-            }
-
-        });
+//        Firebase firebase = new Firebase("https://vivid-inferno-8916.firebaseio.com/").child("Chatrooms");
+//
+//        firebase.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot snapshot) {
+//                System.out.println("IN ON DATA CHANGE");
+//                System.out.println(snapshot.getValue());
+//                for (DataSnapshot entry : snapshot.getChildren()) {
+//                    System.out.println(entry.getKey());
+//                    listOfRooms.add(entry.getKey());
+//                }
+//                for (String i : listOfRooms) {
+//                    System.out.println(i);
+//                }
+//
+//                String[] toReturn = new String[listOfRooms.size()];
+//                toReturn = listOfRooms.toArray(toReturn);
+//                ArrayAdapter adapter = new ArrayAdapter<String>(ChatRoomSelect.this, R.layout.activity_listview, toReturn);
+//                ListView listView = (ListView) findViewById(R.id.ListOfRooms);
+//                listView.setAdapter(adapter);
+//            }
+//
+//            @Override
+//            public void onCancelled(FirebaseError firebaseError) {
+//                System.out.println("The read failed: " + firebaseError.getMessage());
+//            }
+//
+//        });
 
 
     }
