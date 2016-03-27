@@ -30,9 +30,9 @@ public class Login extends AppCompatActivity implements android.view.View.OnClic
         launchHomeScreen.setOnClickListener(this);
 
         mEmailField = (EditText)findViewById(R.id.emailField);
-        mEmailField.setText("a");
+        //mEmailField.setText("a");
         mPasswordField = (EditText)findViewById(R.id.passwordField);
-        mPasswordField.setText("c");
+        //mPasswordField.setText("c");
 
     }
 
