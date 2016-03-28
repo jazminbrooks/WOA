@@ -68,7 +68,7 @@ public class WorkoutContent {
                 ALL_ITEMS_MAP = new HashMap<>();
 
                 System.out.println(snapshot.getChildrenCount() + " children in Data!!!!!!!!!!!!");
-                NUM_WORKOUTS = (int)snapshot.getChildrenCount();
+                NUM_WORKOUTS = (int) snapshot.getChildrenCount();
 
                 for (DataSnapshot workoutSnapshot : snapshot.getChildren()) {
                     Workout workout = workoutSnapshot.getValue(Workout.class);
@@ -110,6 +110,7 @@ public class WorkoutContent {
                         System.out.println(workout_key + ": " + exercise_key + " -> " + we);
                     }
 
+
                     addExercise(workout, exercises);
                 }
             }
@@ -124,6 +125,8 @@ public class WorkoutContent {
 
     private static void addItem(Workout item, String id) {
         boolean contains = false;
+        System.out.println("Inside Add Item");
+        System.out.println("item = " + item.toString());
         for(Workout e : ALL_ITEMS) {
             if (e.getName().equals(item.getName())) {
                 contains = true;
@@ -137,13 +140,19 @@ public class WorkoutContent {
 
     private static void addExercise(Workout item, List<ExerciseContent.Exercise> exercises) {
         boolean contains = false;
-        for(Workout e : WORKOUT_EXERCISES.keySet()) {
-            if (e.getName().equals(item.getName())) {
-                contains = true;
-            }
-        }
-        if(!contains) {
+
+        if(item == null){
             WORKOUT_EXERCISES.put(item, exercises);
+        }else {
+            for (Workout e : WORKOUT_EXERCISES.keySet()) {
+                if (e.getName().equals(item.getName())) {
+
+                    contains = true;
+                }
+            }
+            if (!contains) {
+                WORKOUT_EXERCISES.put(item, exercises);
+            }
         }
     }
 
