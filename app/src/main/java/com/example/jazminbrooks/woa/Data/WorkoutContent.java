@@ -125,10 +125,8 @@ public class WorkoutContent {
 
     private static void addItem(Workout item, String id) {
         boolean contains = false;
-        System.out.println("Inside Add Item");
-        System.out.println("item = " + item.toString());
-        for(Workout e : ALL_ITEMS) {
-            if (e.getName().equals(item.getName())) {
+        for(Workout w : ALL_ITEMS) {
+            if (w.getName().equals(item.getName()) && w.getUserid().equals(item.getUserid())) {
                 contains = true;
             }
         }
@@ -141,11 +139,9 @@ public class WorkoutContent {
     private static void addExercise(Workout item, List<ExerciseContent.Exercise> exercises) {
         boolean contains = false;
 
-        if(item == null){
-            WORKOUT_EXERCISES.put(item, exercises);
-        }else {
-            for (Workout e : WORKOUT_EXERCISES.keySet()) {
-                if (e.getName().equals(item.getName())) {
+        if(item != null){
+            for (Workout w : WORKOUT_EXERCISES.keySet()) {
+                if (w.getName().equals(item.getName()) && w.getUserid().equals(item.getUserid())) {
 
                     contains = true;
                 }

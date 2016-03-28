@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.jazminbrooks.woa.Data.WorkoutContent;
+
 public class ChangeUsername extends AppCompatActivity implements android.view.View.OnClickListener{
 
     SharedPreferences mSharedPreferences;

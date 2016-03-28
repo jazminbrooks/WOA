@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.jazminbrooks.woa.Data.ExerciseContent;
 import com.example.jazminbrooks.woa.Data.WorkoutContent;
@@ -32,9 +33,13 @@ public class BuildWorkout extends AppCompatActivity implements BuildWorkoutFragm
         createWorkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                WorkoutContent.createNewWorkout(mNameEditText.getText().toString());
-                Intent intent = new Intent(BuildWorkout.this, MyWorkouts.class);
-                startActivity(intent);
+                if (WorkoutContent.NEW_EXERCISES.size() > 0) {
+                    WorkoutContent.createNewWorkout(mNameEditText.getText().toString());
+                    Intent intent = new Intent(BuildWorkout.this, MyWorkouts.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(BuildWorkout.this, "Workout must have at least one exercise.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

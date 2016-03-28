@@ -74,8 +74,16 @@ public class ExerciseContent {
 
 
     private static void addItem(Exercise item) {
-        ITEMS.add(item);
-        ITEM_MAP.put(item.getName(), item);
+        boolean contains = false;
+        for (Exercise e: ITEMS) {
+            if (e.getName().equals(item.getName())) {
+                contains = true;
+            }
+        }
+        if (!contains) {
+            ITEMS.add(item);
+            ITEM_MAP.put(item.getName(), item);
+        }
     }
 
 
