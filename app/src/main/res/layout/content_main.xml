@@ -22,8 +22,11 @@
         android:textColor="@color/textColor"
         android:padding="10dp"
         android:clickable="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="100dp"
+        android:layout_alignLeft="@+id/signupbutton"
+        android:layout_alignStart="@+id/signupbutton"
+        android:layout_alignRight="@+id/signupbutton"
+        android:layout_alignEnd="@+id/signupbutton"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -36,6 +39,6 @@
         android:id="@+id/signupbutton"
         android:clickable="true"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
