@@ -14,6 +14,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/textColor"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
@@ -23,6 +24,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Exercise Name"
+            android:textColor="@color/colorPrimary"
             android:id="@+id/name_t"
             android:padding="10dp" />
 
@@ -39,6 +41,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Type"
+            android:textColor="@color/colorPrimary"
             android:id="@+id/type_t"
             android:padding="10dp" />
 
@@ -55,6 +58,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Description"
+            android:textColor="@color/colorPrimary"
             android:id="@+id/description_t"
             android:padding="10dp" />
 
@@ -71,6 +75,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Sets"
+            android:textColor="@color/colorPrimary"
             android:id="@+id/sets_t"
             android:padding="10dp" />
 
@@ -87,6 +92,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Reps"
+            android:textColor="@color/colorPrimary"
             android:id="@+id/reps_t"
             android:padding="10dp" />
 
@@ -103,6 +109,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Video Link"
+            android:textColor="@color/colorPrimary"
             android:id="@+id/video_t"
             android:padding="10dp" />
 
