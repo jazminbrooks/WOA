@@ -16,7 +16,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
-
+import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -117,7 +117,7 @@ public class Locations extends FragmentActivity implements
 
     @Override
     public void onConnected(Bundle bundle) {
-        Log.i(TAG,"Location services connected.");
+        Log.i(TAG, "Location services connected.");
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -131,10 +131,26 @@ public class Locations extends FragmentActivity implements
         Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         if (location == null) {
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
+            Toast.makeText(getApplicationContext(), "Turn on the location on your phone for a better experience.",
+                    Toast.LENGTH_LONG).show();
+            handleNoLocation();
         }
         else {
             handleNewLocation(location);
         }
+    }
+
+    private void handleNoLocation(){
+        Log.d(TAG, "Default location to Student Union");
+        LatLng union = new LatLng(39.997720, -83.008575);
+        MarkerOptions options = new MarkerOptions()
+                .position(union)
+                .title("Ohio State Student Union")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+        mMap.addMarker(options);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(union));
+        CameraUpdate yourLocation = CameraUpdateFactory.newLatLngZoom(union, 14);
+        mMap.animateCamera(yourLocation);
     }
 
     private void handleNewLocation(Location location){
