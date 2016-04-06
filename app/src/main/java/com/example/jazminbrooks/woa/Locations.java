@@ -176,6 +176,8 @@ public class Locations extends FragmentActivity implements
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
         Log.i(TAG, "Location services failed.");
+        Toast.makeText(getApplicationContext(), "Sorry something went wrong. Make sure your device has Google Maps installed and please try using this feature at another time.",
+                Toast.LENGTH_LONG).show();
     }
     @Override
     public void onLocationChanged(Location location) {
