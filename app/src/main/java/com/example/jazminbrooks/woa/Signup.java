@@ -15,6 +15,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class Signup extends AppCompatActivity implements android.view.View.OnClickListener{
 
 
@@ -64,7 +67,7 @@ public class Signup extends AppCompatActivity implements android.view.View.OnCli
             SharedPreferences.Editor editor = getSharedPreferences("com.example.jazminbrooks.woa", MODE_PRIVATE).edit();
             editor.putString("email", email);
             editor.putString("username", username);
-            editor.putString("password", password);
+            editor.putString("password", generate_hashed_password(password));
             editor.commit();
 
             startActivity(new Intent(this, HomeScreen.class));
@@ -92,5 +95,34 @@ public class Signup extends AppCompatActivity implements android.view.View.OnCli
                 CreateAccount();
                 break;
         }
+    }
+
+    private String generate_hashed_password(String password_to_hash){
+        String passwordToHash = password_to_hash;
+        String generatedPassword = null;
+        try {
+            // Create MessageDigest instance for MD5
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            //Add password bytes to digest
+            md.update(passwordToHash.getBytes());
+            //Get the hash's bytes
+            byte[] bytes = md.digest();
+            //This bytes[] has bytes in decimal format;
+            //Convert it to hexadecimal format
+            StringBuilder sb = new StringBuilder();
+            for(int i=0; i< bytes.length ;i++)
+            {
+                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            //Get complete hashed password in hex format
+            generatedPassword = sb.toString();
+        }
+        catch (NoSuchAlgorithmException e)
+        {
+            e.printStackTrace();
+        }
+
+        return generatedPassword;
+        //System.out.println(generatedPassword);
     }
 }
