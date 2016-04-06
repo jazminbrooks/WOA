@@ -32,6 +32,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Change Email"
+        android:background="@color/buttonColor"
+        android:textColor="@color/textColor"
         android:id="@+id/changeEmailButton"
         android:layout_above="@+id/changeUsernameButton"
         android:layout_alignLeft="@+id/changeUsernameButton"
@@ -43,7 +45,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/buttonColor"
         android:text="Change Username"
+        android:textColor="@color/textColor"
         android:id="@+id/changeUsernameButton"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
@@ -51,7 +55,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/buttonColor"
         android:text="Change Password"
+        android:textColor="@color/textColor"
         android:id="@+id/changePasswordButton"
         android:layout_below="@+id/changeUsernameButton"
         android:layout_alignLeft="@+id/changeUsernameButton"
