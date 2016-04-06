@@ -131,7 +131,7 @@ public class Locations extends FragmentActivity implements
         Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         if (location == null) {
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
-            Toast.makeText(getApplicationContext(), "Turn on the location on your phone for a better experience.",
+            Toast.makeText(getApplicationContext(), "Turn on the location on your device for a better map experience.",
                     Toast.LENGTH_LONG).show();
             handleNoLocation();
         }
