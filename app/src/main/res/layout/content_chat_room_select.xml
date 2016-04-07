@@ -8,6 +8,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="@color/textColor"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.jazminbrooks.woa.ChatRoomSelect"
@@ -35,6 +36,7 @@
         android:layout_alignParentEnd="true"
         android:layout_toRightOf="@+id/ChatRoomInput"
         android:layout_toEndOf="@+id/ChatRoomInput"/>
+
 
     <ListView
         android:layout_width="wrap_content"

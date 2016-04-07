@@ -10,5 +10,5 @@
     app:layoutManager="LinearLayoutManager"
     tools:context="com.example.jazminbrooks.woa.WorkoutFragment"
     tools:listitem="@layout/fragment_workout"
-    android:background="#9dcdcdcd"
+    android:background="@color/textColorDark"
     android:clickable="false" />
