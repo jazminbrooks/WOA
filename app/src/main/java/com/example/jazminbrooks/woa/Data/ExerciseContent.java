@@ -7,6 +7,8 @@ import com.firebase.client.Query;
 import com.firebase.client.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -62,6 +64,7 @@ public class ExerciseContent {
                     System.out.println("ExerciseContent Adding Exercise: " + exercise.getName() + " -> " + exercise.getType());
                     addItem(exercise);
                 }
+                Collections.sort(ITEMS);
             }
 
             @Override
@@ -90,7 +93,7 @@ public class ExerciseContent {
     /**
      * A dummy item representing a piece of name.
      */
-    public static class Exercise {
+    public static class Exercise implements Comparable<Exercise>{
         private String name;
         private String description;
         private String video;
@@ -164,5 +167,11 @@ public class ExerciseContent {
             return name;
         }
 
+
+        @Override
+        public int compareTo(Exercise another) {
+            return (this.getName().compareTo(another.getName()));
+
+        }
     }
 }
