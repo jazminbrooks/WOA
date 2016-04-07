@@ -6,6 +6,7 @@
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
+                android:background="@color/textColor"
                 tools:context="com.example.jazminbrooks.woa.SignupFragment"
                 tools:showIn="@layout/activity_signup">
 
@@ -59,6 +60,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit!"
+        android:background="@color/buttonColor"
+        android:textColor="@color/textColor"
         android:id="@+id/submit"
         android:layout_below="@+id/confirmPassword"
         android:layout_centerHorizontal="true"
