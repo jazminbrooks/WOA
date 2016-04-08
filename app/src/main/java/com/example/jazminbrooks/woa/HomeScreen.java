@@ -51,8 +51,10 @@ public class HomeScreen extends AppCompatActivity implements android.view.View.O
         Firebase.setAndroidContext(this);
         final Firebase myFirebaseRef = new Firebase("https://vivid-inferno-8916.firebaseio.com/");
 
-        while (ExerciseContent.INIT == false) {
+        if (ExerciseContent.INIT == false) {
             System.out.println("Loading Exercise Content....");
+            ExerciseContent.updateItems();
+            ExerciseContent.INIT = true;
         }
         WorkoutContent.USERID = username;
         if (WorkoutContent.INIT == false) {
@@ -94,4 +96,5 @@ public class HomeScreen extends AppCompatActivity implements android.view.View.O
                 break;
         }
     }
+
 }

@@ -1,10 +1,14 @@
 package com.example.jazminbrooks.woa;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -20,6 +24,7 @@ public class ExerciseDetails extends AppCompatActivity {
         setContentView(R.layout.activity_exercise_details);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView nameText = (TextView) findViewById(R.id.name_d);
         nameText.setText(mExercise.getName());
@@ -37,8 +42,17 @@ public class ExerciseDetails extends AppCompatActivity {
         repsText.setText(mExercise.getReps());
 
         TextView videoText = (TextView) findViewById(R.id.video_d);
-        videoText.setText(mExercise.getVideo());
+        videoText.setClickable(true);
+        videoText.setMovementMethod(LinkMovementMethod.getInstance());
+        videoText.setText(Html.fromHtml("<a href=\"" + mExercise.getVideo() + "\">" + mExercise.getName() + "</a>"));
+        //videoText.setLinksClickable(true);
 
     }
 
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), ExerciseDescriptions.class);
+        startActivityForResult(myIntent, 0);
+        return true;
+
+    }
 }

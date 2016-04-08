@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.example.jazminbrooks.woa.Data.ExerciseContent;
@@ -20,9 +21,11 @@ public class WorkoutDetails extends AppCompatActivity implements WorkoutDetailsF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_details);
 
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(WorkoutContent.CURRENT_WORKOUT.getName());
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         /*
 
@@ -44,4 +47,10 @@ public class WorkoutDetails extends AppCompatActivity implements WorkoutDetailsF
 
     }
 
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), MyWorkouts.class);
+        startActivityForResult(myIntent, 0);
+        return true;
+
+    }
 }
