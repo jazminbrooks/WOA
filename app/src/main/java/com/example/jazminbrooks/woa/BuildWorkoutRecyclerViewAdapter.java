@@ -5,11 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.example.jazminbrooks.woa.Data.ExerciseContent;
 import com.example.jazminbrooks.woa.Data.WorkoutContent;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,10 +22,16 @@ public class BuildWorkoutRecyclerViewAdapter extends RecyclerView.Adapter<BuildW
 
     private List<ExerciseContent.Exercise> mValues;
     private BuildWorkoutFragment.OnListFragmentInteractionListener mListener;
+    private boolean[] mSelected;
 
     public BuildWorkoutRecyclerViewAdapter(List<ExerciseContent.Exercise> items, BuildWorkoutFragment.OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
+        mSelected = new boolean[mValues.size()];
+
+        for (int i = 0; i < mSelected.length; i++) {
+            mSelected[i] = false;
+        }
     }
 
     @Override
@@ -34,13 +42,20 @@ public class BuildWorkoutRecyclerViewAdapter extends RecyclerView.Adapter<BuildW
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.mItem = mValues.get(position);
         holder.mNameView.setText(mValues.get(position).getName());
         holder.mContentView.setText(mValues.get(position).getType());
-        holder.mCheckBox.setOnClickListener(new View.OnClickListener() {
+
+        holder.mCheckBox.setOnCheckedChangeListener(null);
+
+
+        holder.mCheckBox.setChecked(mSelected[position]);
+
+        holder.mCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                mSelected[position] = isChecked;
                 WorkoutContent.addRemoveExerciseToWorkout(holder.mItem);
             }
         });
