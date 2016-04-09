@@ -1,118 +1,159 @@
-<?xml version="1.0" encoding="utf-8"?>
+<fragment android:id="@+id/fragment"
+          android:name="com.example.jazminbrooks.woa.HomescreenFragment"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:app="http://schemas.android.com/apk/res-auto"
+          xmlns:tools="http://schemas.android.com/tools"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:layout_behavior="@string/appbar_scrolling_view_behavior"
+          tools:layout="@layout/fragment_home_screen"/>
 
 
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/textColor"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.jazminbrooks.woa.HomeScreen"
-    tools:showIn="@layout/activity_home_screen">
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chat Rooms"
-        android:background="@color/buttonColor"
-        android:padding="10dp"
-        android:id="@+id/ChatRoomButton"
-        android:textColor="@color/textColor"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_alignRight="@+id/ExerciseDescriptionsButton"
-        android:layout_alignEnd="@+id/ExerciseDescriptionsButton"
-        android:layout_alignLeft="@+id/ExerciseDescriptionsButton"
-        android:layout_alignStart="@+id/ExerciseDescriptionsButton"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Exercise Descriptions"
-        android:padding="10dp"
-        android:layout_margin="10dp"
-        android:background="@color/buttonColor"
-        android:id="@+id/ExerciseDescriptionsButton"
-        android:textColor="@color/textColor"
-        android:layout_above="@+id/ChatRoomButton"
-        android:layout_centerHorizontal="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="Gyms Near Me"
-        android:background="@color/buttonColor"
-        android:textColor="@color/textColor"
-        android:id="@+id/LocationsButton"
-        android:layout_below="@+id/ChatRoomButton"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_alignRight="@+id/ChatRoomButton"
-        android:layout_alignEnd="@+id/ChatRoomButton"
-        android:layout_alignLeft="@+id/ChatRoomButton"
-        android:layout_alignStart="@+id/ChatRoomButton"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="My Workouts"
-        android:background="@color/buttonColor"
-        android:id="@+id/MyWorkoutsButton"
-        android:padding="10dp"
-        android:textColor="@color/textColor"
-        android:layout_below="@+id/LocationsButton"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_alignRight="@+id/LocationsButton"
-        android:layout_alignEnd="@+id/LocationsButton"
-        android:layout_alignLeft="@+id/LocationsButton"
-        android:layout_alignStart="@+id/LocationsButton"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="My Account"
-        android:textColor="@color/textColor"
-        android:padding="10dp"
-        android:layout_margin="10dp"
-        android:background="@color/buttonColor"
-        android:id="@+id/MyAccountButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        android:id="@+id/LogoutButton"
-        android:padding="10dp"
-        android:background="@color/buttonColor"
-        android:textColor="@color/textColor"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/GreetingText"
-        android:textColor="@color/textColorDark"
-        android:layout_below="@+id/MyAccountButton"
-        android:textSize="30dp"
-        android:layout_centerHorizontal="true"
-        android:textAlignment="center"/>
 
-</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+
+
+
+<!--<RelativeLayout-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:paddingBottom="@dimen/activity_vertical_margin"-->
+    <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
+    <!--android:paddingRight="@dimen/activity_horizontal_margin"-->
+    <!--android:paddingTop="@dimen/activity_vertical_margin"-->
+    <!--android:background="@color/textColor"-->
+    <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+    <!--tools:context="com.example.jazminbrooks.woa.HomeScreen"-->
+    <!--tools:showIn="@layout/activity_home_screen">-->
+
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Chat Rooms"-->
+        <!--android:background="@color/buttonColor"-->
+        <!--android:padding="10dp"-->
+        <!--android:id="@+id/ChatRoomButton"-->
+        <!--android:textColor="@color/textColor"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:layout_alignRight="@+id/ExerciseDescriptionsButton"-->
+        <!--android:layout_alignEnd="@+id/ExerciseDescriptionsButton"-->
+        <!--android:layout_alignLeft="@+id/ExerciseDescriptionsButton"-->
+        <!--android:layout_alignStart="@+id/ExerciseDescriptionsButton"/>-->
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Exercise Descriptions"-->
+        <!--android:padding="10dp"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:background="@color/buttonColor"-->
+        <!--android:id="@+id/ExerciseDescriptionsButton"-->
+        <!--android:textColor="@color/textColor"-->
+        <!--android:layout_above="@+id/ChatRoomButton"-->
+        <!--android:layout_centerHorizontal="true" />-->
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:padding="10dp"-->
+        <!--android:text="Gyms Near Me"-->
+        <!--android:background="@color/buttonColor"-->
+        <!--android:textColor="@color/textColor"-->
+        <!--android:id="@+id/LocationsButton"-->
+        <!--android:layout_below="@+id/ChatRoomButton"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:layout_alignRight="@+id/ChatRoomButton"-->
+        <!--android:layout_alignEnd="@+id/ChatRoomButton"-->
+        <!--android:layout_alignLeft="@+id/ChatRoomButton"-->
+        <!--android:layout_alignStart="@+id/ChatRoomButton"/>-->
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="My Workouts"-->
+        <!--android:background="@color/buttonColor"-->
+        <!--android:id="@+id/MyWorkoutsButton"-->
+        <!--android:padding="10dp"-->
+        <!--android:textColor="@color/textColor"-->
+        <!--android:layout_below="@+id/LocationsButton"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:layout_alignRight="@+id/LocationsButton"-->
+        <!--android:layout_alignEnd="@+id/LocationsButton"-->
+        <!--android:layout_alignLeft="@+id/LocationsButton"-->
+        <!--android:layout_alignStart="@+id/LocationsButton"/>-->
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="My Account"-->
+        <!--android:textColor="@color/textColor"-->
+        <!--android:padding="10dp"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:background="@color/buttonColor"-->
+        <!--android:id="@+id/MyAccountButton"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true" />-->
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Logout"-->
+        <!--android:id="@+id/LogoutButton"-->
+        <!--android:padding="10dp"-->
+        <!--android:background="@color/buttonColor"-->
+        <!--android:textColor="@color/textColor"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_marginBottom="10dp"/>-->
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+        <!--android:id="@+id/GreetingText"-->
+        <!--android:textColor="@color/textColorDark"-->
+        <!--android:layout_below="@+id/MyAccountButton"-->
+        <!--android:textSize="30dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:textAlignment="center"/>-->
+
+<!--</RelativeLayout>-->

@@ -35,12 +35,12 @@
         android:background="@color/buttonColor"
         android:textColor="@color/textColor"
         android:id="@+id/changeEmailButton"
-        android:layout_above="@+id/changeUsernameButton"
+        android:layout_below="@+id/UserGreeting"
         android:layout_alignLeft="@+id/changeUsernameButton"
         android:layout_alignStart="@+id/changeUsernameButton"
-        android:layout_marginBottom="65dp"
         android:layout_alignRight="@+id/changeUsernameButton"
-        android:layout_alignEnd="@+id/changeUsernameButton"/>
+        android:layout_alignEnd="@+id/changeUsernameButton"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -49,8 +49,12 @@
         android:text="Change Username"
         android:textColor="@color/textColor"
         android:id="@+id/changeUsernameButton"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_below="@+id/changeEmailButton"
+        android:layout_alignLeft="@+id/changePasswordButton"
+        android:layout_alignStart="@+id/changePasswordButton"
+        android:layout_alignRight="@+id/changePasswordButton"
+        android:layout_alignEnd="@+id/changePasswordButton"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -60,9 +64,6 @@
         android:textColor="@color/textColor"
         android:id="@+id/changePasswordButton"
         android:layout_below="@+id/changeUsernameButton"
-        android:layout_alignLeft="@+id/changeUsernameButton"
-        android:layout_alignStart="@+id/changeUsernameButton"
-        android:layout_marginTop="75dp"
-        android:layout_alignRight="@+id/changeUsernameButton"
-        android:layout_alignEnd="@+id/changeUsernameButton"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
 </RelativeLayout>
