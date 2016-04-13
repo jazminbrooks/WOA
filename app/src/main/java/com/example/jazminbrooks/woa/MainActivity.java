@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         Firebase.setAndroidContext(this);
+        Firebase.getDefaultConfig().setPersistenceEnabled(true);
 
         Firebase myFirebaseRef = new Firebase("https://vivid-inferno-8916.firebaseio.com/");
 

@@ -189,3 +189,4 @@ public abstract class FirebaseListAdapter<T> extends BaseAdapter {
      */
     protected abstract void populateView(View v, T model);
 }
+

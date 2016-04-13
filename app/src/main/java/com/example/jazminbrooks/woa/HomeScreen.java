@@ -49,6 +49,7 @@ public class HomeScreen extends AppCompatActivity implements android.view.View.O
 
         // Gather Firebase Workout Data
         Firebase.setAndroidContext(this);
+        //Firebase.getDefaultConfig().setPersistenceEnabled(true);
         final Firebase myFirebaseRef = new Firebase("https://vivid-inferno-8916.firebaseio.com/");
 
         if (ExerciseContent.INIT == false) {

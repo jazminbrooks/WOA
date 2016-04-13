@@ -15,5 +15,6 @@ public class ChatApplication extends android.app.Application {
     public void onCreate() {
         super.onCreate();
         Firebase.setAndroidContext(this);
+        //Firebase.getDefaultConfig().setPersistenceEnabled(true);
     }
 }
