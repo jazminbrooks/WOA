@@ -1,5 +1,6 @@
 package com.example.jazminbrooks.woa;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -17,6 +18,7 @@ import com.example.jazminbrooks.woa.Data.ExerciseContent;
 public class ExerciseDetails extends AppCompatActivity {
 
     public static ExerciseContent.Exercise mExercise;
+    public static Activity mLastActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +52,7 @@ public class ExerciseDetails extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), ExerciseDescriptions.class);
+        Intent myIntent = new Intent(getApplicationContext(), mLastActivity.getClass());
         startActivityForResult(myIntent, 0);
         return true;
 

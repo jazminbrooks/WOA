@@ -1,5 +1,7 @@
 package com.example.jazminbrooks.woa.Data;
 
+import android.content.Context;
+
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;

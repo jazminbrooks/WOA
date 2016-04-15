@@ -76,7 +76,7 @@ public class ExerciseContent {
     }
 
 
-    private static void addItem(Exercise item) {
+    public static void addItem(Exercise item) {
         boolean contains = false;
         for (Exercise e: ITEMS) {
             if (e.getName().equals(item.getName())) {

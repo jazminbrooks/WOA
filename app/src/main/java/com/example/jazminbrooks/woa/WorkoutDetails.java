@@ -43,6 +43,7 @@ public class WorkoutDetails extends AppCompatActivity implements WorkoutDetailsF
     public void onListFragmentInteraction(ExerciseContent.Exercise exercise) {
         Intent intent = new Intent(this, ExerciseDetails.class);
         ExerciseDetails.mExercise = exercise;
+        ExerciseDetails.mLastActivity = this;
         startActivity(intent);
 
     }

@@ -70,7 +70,7 @@ public class Login extends AppCompatActivity implements android.view.View.OnClic
 
     }
 
-    private String generate_hashed_password(String password_to_hash){
+    public static String generate_hashed_password(String password_to_hash){
         String passwordToHash = password_to_hash;
         String generatedPassword = null;
         try {
