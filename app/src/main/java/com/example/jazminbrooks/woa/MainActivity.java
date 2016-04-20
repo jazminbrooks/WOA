@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d(TAG, "On Create .....");
 
         Firebase.setAndroidContext(this);
-        Firebase.getDefaultConfig().setPersistenceEnabled(true);
+        //Firebase.getDefaultConfig().setPersistenceEnabled(true);
 
         Firebase myFirebaseRef = new Firebase("https://vivid-inferno-8916.firebaseio.com/");
 
